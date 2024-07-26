@@ -1,0 +1,16 @@
+{
+  "entityTypeExtensions": [
+    {
+      "entityType": "User",
+
+      "properties": {
+        "cacheData": {
+          "type": "string"
+        },
+        "cacheTimestamp": {
+          "type": "integer"
+        }
+      }
+    }
+  ]
+}

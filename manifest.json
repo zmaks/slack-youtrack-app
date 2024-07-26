@@ -1,0 +1,21 @@
+{
+  "name" : "slack-user-status",
+  "title" : "Slack User Status",
+  "description" : "A user card widget that displays Slack data (profile name, status) and the Slack Chat button that redirects you to the chat with the user.",
+  "version": "1.0.0",
+  "icon": "slack.svg",
+  "minYouTrackVersion": "2024.3.0",
+  "widgets": [
+    {
+      "key": "slack-user-card",
+      "name": "Slack",
+      "description": "Displays user's Slack status and the link to Slack Chat",
+      "indexPath": "user-status-widget/index.html",
+      "extensionPoint": "USER_CARD",
+      "expectedDimensions": {
+        "height": 50,
+        "width": 250
+      }
+    }
+  ]
+}

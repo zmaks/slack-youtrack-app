@@ -1,0 +1,43 @@
+body {
+    padding: 0 !important;
+    /*overflow: hidden !important;*/
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+/*body:hover {*/
+/*    overflow-y: scroll !important;*/
+/*}*/
+
+body::-webkit-scrollbar {
+    display: none !important;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    margin-top: -12px;
+    padding-left: 5px;
+}
+
+.row {
+    width: 250px;
+}
+
+.img-icon {
+    margin-top: 2px;
+    margin-left: 3px;
+}
+
+.loader {
+    padding: 5px;
+    padding-left: 15px;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+}

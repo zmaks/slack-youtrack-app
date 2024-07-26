@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://example.com/employee.schema.json",
+  "title": "Slack Integration Settings",
+  "description": "The settings to make HTTP requests to Slack API, cache the responses if needed, restrict the user group to show the Slack data",
+  "type": "object",
+  "properties": {
+    "slackToken": {
+      "title": "Slack Token",
+      "description": "Bearer token for Slack API. Follow this link to obtain a token for your Slack: https://api.slack.com/tutorials/tracks/getting-a-token",
+      "type": "string",
+      "format": "secret"
+    },
+    "cacheTimeoutMin": {
+      "title": "Slack Status Cache Timeout (minutes)",
+      "description": "The app can save user's Slack data in the database in order to decrease the number of requests to Slack API. The cache invalidates after this timeout (in minutes). 0 or empty value means the cache is disabled.",
+      "type": "integer"
+    },
+    "targetUserGroup": {
+      "title": "User Group in Slack",
+      "description": "The Slack widget will request Slack data only for this group",
+      "type": "object",
+      "x-entity": "UserGroup"
+    },
+    "notInGroupMessage": {
+      "title": "Not In Group Message",
+      "description": "This message will be shown instead of the Slack data for users that are not in the 'User Group in Slack'",
+      "type": "string"
+    }
+  },
+  "required": [
+    "slackToken"
+  ]
+}

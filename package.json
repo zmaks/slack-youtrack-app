@@ -1,0 +1,35 @@
+{
+  "name": "slack-status-youtrack-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf dist/* && tsc && vite build",
+    "upload": "npm run build && youtrack-workflow upload dist --host $YOUTRACK_HOST --token $YOUTRACK_TOKEN",
+    "pack": "npm run build && rm -rf slack-status-app.zip && cd dist && zip -r ../slack-status-app.zip ."
+  },
+  "dependencies": {
+    "@jetbrains/ring-ui-built": "^6.0.25",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@jetbrains/eslint-config": "^5.4.2",
+    "@jetbrains/youtrack-scripting": "^0.2.1",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "glob": "^11.0.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-static-copy": "^1.0.6"
+  }
+}
