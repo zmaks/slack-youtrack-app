@@ -10,7 +10,7 @@ YouTrack App that extends the user card area with data fetched from Slack.
 > **Note**  
 >This command is useful for the continuous app changes delivery to YouTrack during the development.
 1. Create a [YouTrack token](https://www.jetbrains.com/help/youtrack/cloud/manage-permanent-token.html#obtain-permanent-token)
-2. Save the token to env: `export YOUTRACK_TOKEN=<your_token>`
+2. Save the token and the YouTrack host to env: `export YOUTRACK_TOKEN=<your_token> && export YOUTRACK_HOST=<host>`
 3. Run `npm run upload`
 
 ### Create App Package
