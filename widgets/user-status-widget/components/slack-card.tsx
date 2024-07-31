@@ -1,7 +1,6 @@
 import React, {memo} from 'react';
 import type {FC} from 'react';
 import type {Profile} from '../types/profile.ts';
-import {Grid, Row, Col} from '@jetbrains/ring-ui-built/components/grid/grid';
 import Tooltip from '@jetbrains/ring-ui-built/components/tooltip/tooltip';
 import Text from '@jetbrains/ring-ui-built/components/text/text';
 import Group from '@jetbrains/ring-ui-built/components/group/group';
@@ -18,42 +17,41 @@ const SlackCardComponent: FC<Props> = props => {
         statusText += ' until ' + profile.slackData?.statusExpiration;
     }
     const nameRow = (
-        <Row start="xs" className={'row'}>
-            <Col xs={11}>
-                <Group>
-                    <Text size={Text.Size.M} bold>{profile.slackData?.fullName}</Text>
-                    <Tooltip
-                        title={statusText}
-                        long
-                        hidden={!profile.slackData?.statusImgUrl}
-                        disabled={!profile.slackData?.statusText}
-                    >
-                        <img
-                            alt="Status"
-                            height={18}
-                            width={18}
-                            className={'img-icon'}
-                            src={profile.slackData?.statusImgUrl}
-                            hidden={!profile.slackData?.statusImgUrl}
-                        />
-                    </Tooltip>
-                    <Tooltip title="Chat in Slack">
-                        <a href={profile.slackLink} target={'_blank'} rel="noreferrer">
-                            <img
-                                alt="Chat in Slack"
-                                height={15}
-                                width={15}
-                                className={'img-icon'}
-                                src={ChatLogo}
-                            />
-                        </a>
-                    </Tooltip>
-                </Group>
-                <br/>
-                <Text size={Text.Size.S} info>{profile.slackData?.profileTitle}</Text>
-            </Col>
+        <div className="slack-info">
+            <Group className="name-row">
+                <Text size={Text.Size.M} bold>{profile.slackData?.fullName}</Text>
 
-        </Row>
+                <Tooltip
+                    title={statusText}
+                    long
+                    hidden={!profile.slackData?.statusImgUrl}
+                    disabled={!profile.slackData?.statusText}
+                >
+                    <img
+                        alt={statusText}
+                        height={18}
+                        width={18}
+                        className={'img-icon'}
+                        src={profile.slackData?.statusImgUrl}
+                        hidden={!profile.slackData?.statusImgUrl}
+                    />
+                </Tooltip>
+
+                <Tooltip title="Chat in Slack">
+                    <a href={profile.slackLink} target={'_blank'} rel="noreferrer">
+                        <img
+                            alt="Chat in Slack"
+                            height={15}
+                            width={15}
+                            className={'img-icon'}
+                            src={ChatLogo}
+                        />
+                    </a>
+                </Tooltip>
+            </Group>
+
+            <Text size={Text.Size.S} info>{profile.slackData?.profileTitle}</Text>
+        </div>
     );
 
     return (
@@ -62,9 +60,9 @@ const SlackCardComponent: FC<Props> = props => {
                 profile.notInTargetGroup
                     ? <Text size={Text.Size.M}>{profile.noSlackMessage}</Text>
                     : (
-                        <Grid className={'grid'}>
+                        <div className="slack-info">
                             {nameRow}
-                        </Grid>
+                        </div>
                     )
             }
         </div>
