@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "lint": "eslint .",
     "build": "rm -rf dist/* && tsc && vite build",
     "upload": "npm run build && youtrack-workflow upload dist --host $YOUTRACK_HOST --token $YOUTRACK_TOKEN",
     "pack": "npm run build && rm -rf slack-status-app.zip && cd dist && zip -r ../slack-status-app.zip ."

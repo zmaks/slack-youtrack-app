@@ -1,0 +1,14 @@
+name: CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '20.10.0'
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: npm ci
+    - name: Run ESLint
+      run: npm run lint
