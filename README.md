@@ -3,8 +3,8 @@
 YouTrack App that extends the user card area with data fetched from Slack.
 
 ### Build
-1. Run `npm i`
-2. Run `npm build`
+1. `npm i`
+2. `npm build`
 
 ### Upload to YouTrack
 > **Note**  
