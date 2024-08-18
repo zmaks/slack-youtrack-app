@@ -4,7 +4,6 @@ const SLACK_BASE_URL = "https://slack.com";
 const LOOKUP_BY_EMAIL_PATH = "/api/users.lookupByEmail";
 
 exports.fetchSlackUserData = (email, ctx) => {
-    console.log("request slack data for " + email)
     const connection = new http.Connection(SLACK_BASE_URL, null, 2000);
     connection.bearerAuth(ctx.settings.slackToken);
     const params = [{ name: "email", value: email }];

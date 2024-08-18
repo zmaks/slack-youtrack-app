@@ -7,11 +7,14 @@ interface SlackData {
 }
 
 export interface Profile {
-    error: boolean,
-    notInTargetGroup: boolean,
-    noSlackMessage: boolean,
-    login: string;
     email?: string;
     slackLink?: string;
     slackData?: SlackData;
+}
+
+export interface ApiResponse {
+    failed: boolean,
+    message: boolean,
+    login: string;
+    profile?: Profile
 }
