@@ -19,6 +19,7 @@ module.exports = {
         ],
         'max-len': ["error", {"code": 120}],
         "indent": ["error", 4],
+        "@typescript-eslint/no-explicit-any": "warn",
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
     },
