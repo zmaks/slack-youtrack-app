@@ -1,7 +1,7 @@
 {
   "name" : "slack-user-status",
   "title" : "Slack User Status",
-  "description" : "A user card widget that displays Slack data (profile name, status) and the Slack Chat button that redirects you to the chat with the user.",
+  "description" : "This application integrates the user's Slack status and a Direct Message link into the user's information card in YouTrack.",
   "version": "1.0.0",
   "icon": "slack.svg",
   "minYouTrackVersion": "2024.3.0",
@@ -9,7 +9,7 @@
     {
       "key": "slack-user-card",
       "name": "Slack",
-      "description": "Displays user's Slack status and the link to Slack Chat",
+      "description": "Displays the user's Slack status and a Direct Message link",
       "indexPath": "user-status-widget/index.html",
       "extensionPoint": "USER_CARD",
       "expectedDimensions": {
