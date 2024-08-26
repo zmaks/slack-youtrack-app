@@ -9,6 +9,7 @@ exports.fetchSlackUserData = (email, ctx) => {
     const params = [{ name: "email", value: email }];
     const response = connection.getSync(LOOKUP_BY_EMAIL_PATH, params);
     if (!response || response.code !== 200) {
+        console.error(`Slack API returned ${response.code} status code: ${response.body}`)
         return { email: email, error: true };
     }
     return response.json();
