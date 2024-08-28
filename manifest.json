@@ -1,7 +1,7 @@
 {
   "name" : "slack-user-status",
   "title" : "Slack User Status",
-  "description" : "This application integrates the user's Slack status and a Direct Message link into the user's information card in YouTrack.",
+  "description" : "Adds a Slack widget to user cards. The widget displays the user’s name and title, their current status, and includes a button that you can click to open a direct message in your Slack workspace.",
   "version": "1.0.0",
   "icon": "slack.svg",
   "minYouTrackVersion": "2024.3.0",
