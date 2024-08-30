@@ -7,7 +7,7 @@
     "dev": "vite",
     "lint": "eslint .",
     "build": "rm -rf dist/* && tsc && vite build",
-    "upload": "npm run build && youtrack-workflow upload dist --host $YOUTRACK_HOST --token $YOUTRACK_TOKEN",
+    "upload": "npm run build && youtrack-app upload dist",
     "pack": "npm run build && rm -rf slack-status-app.zip && cd dist && zip -r ../slack-status-app.zip ."
   },
   "dependencies": {
@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@jetbrains/eslint-config": "^5.4.2",
-    "@jetbrains/youtrack-scripting": "^0.2.1",
+    "@jetbrains/youtrack-apps-tools": "^0.0.1-alpha.10",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
