@@ -1,8 +1,9 @@
 body {
-    background-color: var(--ring-popup-background-color);
+    background-color: transparent;
     color: var(--ring-text-color);
     font-size: var(--ring-font-size);
 
+    margin: 0;
     padding: 0 !important;
     /*overflow: hidden !important;*/
     -ms-overflow-style: none !important;
