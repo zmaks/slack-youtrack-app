@@ -23,4 +23,9 @@ Run `npm run pack`
 
 Now you can find a ZIP file in the root of the project. It's an App that you can [upload to YouTrack](https://www.jetbrains.com/help/youtrack/devportal-apps/apps-quick-start-guide.html#add-app-to-youtrack).
 
-After the app is installed, open the App Admin UI and specify the App Settings. Note, the Slack Token is a required settings to start the app.
+### Slack App Setup
+Create or configure your Slack app so its bot token includes the `users:read.email` OAuth scope.
+This app looks users up via Slack's `users.lookupByEmail` API, and that API requires `users:read.email`.
+If you add the scope after the token was created, reinstall the Slack app to the workspace and update the token in YouTrack app settings.
+
+After the app is installed, open the App Admin UI and specify the App Settings. Note, the Slack Token is a required setting to start the app.
