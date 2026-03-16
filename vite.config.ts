@@ -17,6 +17,7 @@ export default defineConfig({
     plugins: [
         react(),
         viteStaticCopy({
+            silent: true,
             targets: [
                 {src: 'manifest.json', dest: '.'},
                 // copy widget icons and setting JSONs:
