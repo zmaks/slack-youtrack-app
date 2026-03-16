@@ -28,4 +28,5 @@ Create or configure your Slack app so its bot token includes the `users:read.ema
 This app looks users up via Slack's `users.lookupByEmail` API, and that API requires `users:read.email`.
 If you add the scope after the token was created, reinstall the Slack app to the workspace and update the token in YouTrack app settings.
 
-After the app is installed, open the App Admin UI and specify the App Settings. Note, the Slack Token is a required setting to start the app.
+After the app is installed, open the App Admin UI and specify the App Settings. The Slack Token is required to start the app.
+If some users open Slack in the browser, also set `Slack Workspace or Org URL`, for example `https://your-workspace.slack.com`. With that setting, the widget opens the Slack user profile in the browser; otherwise it falls back to the native `slack://` link.

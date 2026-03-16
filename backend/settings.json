@@ -16,6 +16,11 @@
       "description": "The application has the capability to cache Slack responses to reduce the number of requests made to the Slack API. The cache will be invalidated after the specified timeout period (in minutes). A value of 0 or leaving the field empty will disable this caching feature.",
       "type": "integer"
     },
+    "slackWorkspaceUrl": {
+      "title": "Slack Workspace or Org URL",
+      "description": "Optional. Set the base Slack URL used in browsers, for example https://your-workspace.slack.com or your Enterprise Grid org URL. When configured, the widget link opens the Slack user profile in the browser; otherwise it falls back to the native slack:// link.",
+      "type": "string"
+    },
     "targetUserGroup": {
       "title": "User Group in Slack",
       "description": "The Slack widget will request Slack data only for this group of users.",

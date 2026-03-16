@@ -7,10 +7,22 @@ function formatDateForUser(timestamp, user) {
     return dateTime.format(timestamp, DATE_FORMAT, user.timeZoneId);
 }
 
-exports.getProfileLink = (slackUserData) => {
+function normalizeWorkspaceUrl(workspaceUrl) {
+    if (!workspaceUrl) return null;
+    return workspaceUrl.trim().replace(/\/+$/, '');
+}
+
+exports.getProfileLink = (slackUserData, settings) => {
     const teamId = slackUserData.user?.team_id;
     const userId = slackUserData.user?.id;
-    if (!teamId || !userId) return null;
+    if (!userId) return null;
+
+    const workspaceUrl = normalizeWorkspaceUrl(settings?.slackWorkspaceUrl);
+    if (workspaceUrl) {
+        return `${workspaceUrl}/team/${userId}`;
+    }
+
+    if (!teamId) return null;
     return `slack://user?team=${teamId}&id=${userId}`;
 }
 

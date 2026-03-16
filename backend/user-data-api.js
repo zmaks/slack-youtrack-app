@@ -51,7 +51,7 @@ exports.httpHandler = {
                     login: ctx.user.login,
                     profile: {
                         email: email,
-                        slackLink: slackUtil.getProfileLink(slackUserData),
+                        slackLink: slackUtil.getProfileLink(slackUserData, ctx.settings),
                         slackData: slackUtil.getSlackData(slackUserData, ctx.currentUser),
                     }
                 };
